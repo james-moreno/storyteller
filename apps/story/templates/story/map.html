@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+    <title>Story</title>
+{% endblock %}
+
+
+{% block styles %}
+    <link type="text/css" rel="stylesheet" href="{% static 'story/css/styles.css' %}"  media="screen, projection"/>
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="{% static 'story/js/map.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACq6_CLgF2mbSAYjDV2an4arXeBM_BSic&libraries=places&callback=initAutocomplete" async defer></script>
+    <script src="{% static 'story/js/script.js' %}"></script>
+{% endblock %}
+
+
+{% block header %}
+    <header class="section teal lighten-2 white-text">
+        <div class="container">
+            <div class="row">
+                <div class="right">
+                    <a href="{% url 'account:index' %}" class="white-text">login</a>
+                    <a href="{% url 'account:index' %}" class="white-text">create account</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="header-title col s12 m8">
+                    <h5>wander</h5>
+                    <p>Take life one experience at a time.</p>
+                </div>
+
+                <form action="" class="">
+                    <div class="input-field col s12 m4">
+                        <input type="text" name="destination" id="destination">
+                        <label for="destination">Destination</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+
+{% block content %}
+    <div class="section map-wrap">
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <div id="map"></div>
+    </div>
+
+    <div class="section selection-wrap">
+        <div id="placeName"></div>
+        <div id="placeAddress"></div>
+    </div>
+{% endblock %}
+
+
+{% block footer %}
+    <footer class=".page-footer section grey lighten-1 white-text">
+        <div class="container">
+            <div class="row">
+                <div class="col s6 m3 center-align">
+                    <h5>Home</h5>
+                    <a href="{% url 'account:login' %}">Log In</a>
+                </div>
+
+                <div class="col s6 m3 center-align">
+                    <h5>Home</h5>
+                    <a href="">Stories</a>
+                    <a href="">Journies</a>
+                </div>
+
+                <div class="col s12 m6 right-align">
+                    <h5>My Account</h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
