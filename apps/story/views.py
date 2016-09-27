@@ -10,3 +10,7 @@ def index(request):
 def map(request):
 
     return render(request, 'story/map.html')
+
+def add_story(request):
+
+    return render(request, 'story/add_story.html')

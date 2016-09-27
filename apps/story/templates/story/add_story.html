@@ -3,7 +3,7 @@
 
 
 {% block title %}
-    <title>Story</title>
+    <title>Add Story</title>
 {% endblock %}
 
 
@@ -47,24 +47,37 @@
 
 {% block content %}
     <div class="section">
-        <!-- slider goes here -->
+        <div class="container row">
+            <div class="col s12 m6">
+                <form class="" action="index.html" method="post">
+                    <input type="text" name="title" value="" placeholder="Title">
+                    <input type="text" name="location" value="" placeholder="Location">
+                    <div class="input-field">
+                        <select name="rating">
+                            <option value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                        </select>
+                        <select name="genre">
+                            <option value ="Active">Active</option>
+                            <option value ="Relaxation">Relaxation</option>
+                            <option value ="Dining">Dining</option>
+                            <option value ="Socialize">Socialize</option>
+                            <option value ="Competition">Competition</option>
+                        </select>
+                        <textarea name="story_body" class="materialize-textarea" placeholder="Write your story..."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="col s12 m6"></div>
+        </div>
     </div>
 
     <div class="section">
         <div class="stories row"></div>
         <div class="story row"></div>
-    </div>
-
-    <div class="section">
-        <div class="row">
-            <div class="col s12 l6">
-                <!-- explore a... -->
-            </div>
-
-            <div class="col s12 l6">
-                <!-- plan a new experience -->
-            </div>
-        </div>
     </div>
 {% endblock %}
 
